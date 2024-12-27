@@ -5,15 +5,26 @@ using namespace std;
 
 GameState::GameState()
 {
+    backgroundGameState = LoadTexture("Graphics/back.jpg");
+    music = LoadMusicStream("Sounds/mainMusic.ogg");
+    alienHitSound = LoadSound("Sounds/7od.ogg");
+    spaceShipHitSound = LoadSound("Sounds/ahSpaceShip.ogg");
+    SetMusicVolume(music, 0.1);
+    PlayMusicStream(music);
     initGame();
 }
 GameState::~GameState()
 {
     Alien::unloadImgAliens();
+    UnloadMusicStream(music);
+    UnloadSound(alienHitSound);
+    UnloadSound(spaceShipHitSound);
+    UnloadTexture(backgroundGameState);
 }
 
 void GameState::draw(Game& game)
 {
+    DrawTexture(backgroundGameState, 0, 0, WHITE);
     drawTheInterFace();
     drawLevel();
     SpaceShip::drawSpaceShip();
@@ -38,11 +49,14 @@ void GameState::draw(Game& game)
     }
 
     boos.drawBoosAlien();
+    drawAndUpdateLives();
+
+
 }
 
 void GameState::update(Game& game)
 {
-
+    UpdateMusicStream(music);
 
     
     if (running)
@@ -82,7 +96,6 @@ void GameState::update(Game& game)
             initGame();
         }
     }
-    drawAndUpdateLives();
 }
 //=====================================================
 void GameState::handleInput(Game& game)
@@ -226,6 +239,7 @@ void GameState::checkFOrCollision()
         {
             if (CheckCollisionRecs(it->getRect(), laser.getRect()))
             {
+                PlaySound(alienHitSound);
 
                 if (it->typeAlien == 1)
                 {
@@ -270,6 +284,7 @@ void GameState::checkFOrCollision()
             boos.alive = false;
             laser.active = false;
             score += 500;
+            PlaySound(alienHitSound);
         }
     }
 
@@ -279,6 +294,7 @@ void GameState::checkFOrCollision()
     {
         if (CheckCollisionRecs(laser.getRect(), SpaceShip::getRect()))
         {
+            PlaySound(spaceShipHitSound);
             laser.active = false;
             lives--;
             if (lives == 0)
@@ -325,6 +341,8 @@ void GameState::checkFOrCollision()
 
         if (CheckCollisionRecs(alien.getRect(), SpaceShip::getRect()))
         {
+            PlayMusicStream(endGameMusic);
+
             gameOver();
         }
     }
@@ -384,7 +402,6 @@ void GameState::initGame()
     aliens = createAlien();
     aliensDirection = 1;
     lastAlienShootTime = 0.0;
-    // boos.spawn();
     boosTimeLastSpawn = 0.0;
     boosAlienDelay = GetRandomValue(5, 10);
     lives = 3;

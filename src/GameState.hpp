@@ -25,7 +25,11 @@ private:
     void checkFOrCollision();
     void reGame();
     void initGame();
-
+    Texture2D backgroundGameState;
+    Sound alienHitSound;
+    Sound spaceShipHitSound;
+    Music endGameMusic;
+    Music music;
 public:
     GameState();
     ~GameState();

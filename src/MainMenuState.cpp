@@ -4,11 +4,15 @@
 MainMenuState::MainMenuState()
 {
     backgroundMainMenu = LoadTexture("Graphics/backgroundPlayingGame.jpg");
+    menuMusic = LoadMusicStream("Sounds/ahShiitHereWeGoAgain.ogg");
+    SetMusicVolume(menuMusic, 0.1);
+    PlayMusicStream(menuMusic);
 }
 
 MainMenuState::~MainMenuState()
 {
     UnloadTexture(backgroundMainMenu);
+    UnloadMusicStream(menuMusic);
 }
 
 void MainMenuState::handleInput(Game& game)
@@ -19,11 +23,11 @@ void MainMenuState::handleInput(Game& game)
     }
     else if (buttonExit.isPressed(GetMousePosition(), IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
         cout << "\n\n\n\nExit Button Pressed\n\n\n\n\n" ;
-
 }
 
 void MainMenuState::update(Game& game)
 {
+    UpdateMusicStream(menuMusic);
 
 }
 
