@@ -61,9 +61,9 @@ void SpaceShip::moveUpSpaceShip(){
 
 void SpaceShip::moveDownSpaceShip(){
     position.y += 7.5;
-    if (position.y > (GetScreenHeight() - imgSpaceShip.height) -30)
+    if (position.y > (GetScreenHeight() - imgSpaceShip.height) -70)
     {
-        position.y = GetScreenHeight() - imgSpaceShip.height -30;
+        position.y = GetScreenHeight() - imgSpaceShip.height -70;
     }
 }
 

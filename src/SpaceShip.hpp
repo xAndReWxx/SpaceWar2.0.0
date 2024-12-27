@@ -5,7 +5,7 @@
 #include "Positions.hpp"
 using namespace std;
 class SpaceShip : private Positions{
-private:
+protected:
     Texture2D imgSpaceShip;
     double lastFireTime;
 public:

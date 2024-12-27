@@ -4,7 +4,7 @@ Laser::Laser(Vector2 position, int speed)
 {
     this -> position = position;
     this -> speed = speed;
-    imgLaser = LoadTexture("Graphics/spaceShipLaser-removebg-preview.png");
+    imgLaser = LoadTexture("Graphics/spaceShipLaser.png");
     active = true;
 }
 

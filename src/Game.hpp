@@ -1,38 +1,14 @@
 #pragma once
-#include "SpaceShip.hpp"
-#include "Obstacle.hpp"
-#include "Alien.hpp"
-#include "BoosAlien.hpp"
-class Game : public SpaceShip, Obstacle, Alien, BoosAlien, Laser
-{
+#include "State.hpp"
+#include "MainMenuState.hpp"
+class Game{
 private:
-    vector<Obstacle> obstacles;
-    vector<Obstacle> createObstacle();
-    vector<Alien> createAlien();
-    vector<Alien> aliens;
-    BoosAlien boos;
-    float boosAlienDelay;
-    float boosTimeLastSpawn;
-    void checkFOrCollision();
-    void reGame();
-    void initGame();
-
+    State *currentState;
 public:
     Game();
     ~Game();
-    void drawGame();
+    void handleInputGame ();
     void updateGame();
-    void handleGameInput();
-    void destroyLaser();
-    void moveAliens();
-    void moveDownAliens(int distance);
-    void alienShootLaser();
-    void gameOver();
-    int score;
-    int aliensDirection;
-    vector<Laser> aliensLaser;
-    constexpr static float alienLaserShootDelay = 0.35;
-    float lastAlienShootTime;
-    int lives;
-    bool running;
+    void drawGame();
+    void changeState(State* newState);
 };

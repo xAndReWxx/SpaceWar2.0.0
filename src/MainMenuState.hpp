@@ -1,21 +1,23 @@
 #pragma once
+#include "State.hpp"
+#include "Game.hpp"
 #include "GameState.hpp"
 #include "button.hpp"
+#include <iostream>
+using namespace std;
 
-class MainMenu{
+class MainMenuState : public State {
 protected:
     Texture2D backgroundMainMenu;
     Button buttonPlay = {"Graphics/buttonPlay.png", {GetScreenWidth() / 2.0f, (GetScreenHeight() / 2.0f) - 80.0f}};
     Button buttonExit = {"Graphics/buttonExit.png", {(GetScreenWidth() / 2.0f) + 4, (GetScreenHeight() / 2.0f) + 80.0f}};
 public:
-
-    MainMenu();
-
-    ~MainMenu();
+    MainMenuState();
+    ~MainMenuState();
     
-    void handleInputMainMenu() ;
+    void handleInput(Game& game) override;
 
-    void updateMainMenu();
+    void update(Game& game) override;
     
-    void drawMainMenu();
+    void draw(Game& game) override;
 };

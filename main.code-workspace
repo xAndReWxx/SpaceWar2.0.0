@@ -55,7 +55,16 @@
 			"functional": "cpp",
 			"variant": "cpp",
 			"span": "cpp",
-			"text_encoding": "cpp"
+			"text_encoding": "cpp",
+			"bit": "cpp",
+			"charconv": "cpp",
+			"compare": "cpp",
+			"concepts": "cpp",
+			"ctime": "cpp",
+			"iterator": "cpp",
+			"numeric": "cpp",
+			"random": "cpp",
+			"numbers": "cpp"
 		},
 		"git.autoRepositoryDetection": false,
 		"git.enabled": false
