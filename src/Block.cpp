@@ -7,7 +7,7 @@ Block::Block(Vector2 position)
 
 void Block::drawBlock()
 {
-    DrawRectangle(position.x, position.y, 3, 3, {241, 85, 25, 255});
+    DrawRectangle(position.x, position.y, 3, 3, {0, 203, 177, 255});
 }
 
 Rectangle Block::getRect()

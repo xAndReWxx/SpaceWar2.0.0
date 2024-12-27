@@ -5,7 +5,7 @@ using namespace std;
 
 GameState::GameState()
 {
-    backgroundGameState = LoadTexture("Graphics/back.jpg");
+    backgroundGameState = LoadTexture("Graphics/backgroundGameState1.jpg");
     music = LoadMusicStream("Sounds/mainMusic.ogg");
     alienHitSound = LoadSound("Sounds/7od.ogg");
     spaceShipHitSound = LoadSound("Sounds/ahSpaceShip.ogg");
