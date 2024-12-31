@@ -13,6 +13,7 @@ Game::~Game()
 
 void Game::changeState(State* newState)
 {
+    ClearBackground(BLACK);
     delete currentState;
     currentState = newState;
 }

@@ -5,7 +5,7 @@ MainMenuState::MainMenuState()
 {
     backgroundMainMenu = LoadTexture("Graphics/backgroundPlayingGame.jpg");
     menuMusic = LoadMusicStream("Sounds/ahShiitHereWeGoAgain.ogg");
-    SetMusicVolume(menuMusic, 0.1);
+    SetMusicVolume(menuMusic, 0.4);
     PlayMusicStream(menuMusic);
 }
 
@@ -22,7 +22,7 @@ void MainMenuState::handleInput(Game& game)
         game.changeState(loco);
     }
     else if (buttonExit.isPressed(GetMousePosition(), IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
-        cout << "\n\n\n\nExit Button Pressed\n\n\n\n\n" ;
+        CloseWindow();
 }
 
 void MainMenuState::update(Game& game)

@@ -7,22 +7,24 @@ GameState::GameState()
 {
     backgroundGameState = LoadTexture("Graphics/backgroundGameState1.jpg");
     music = LoadMusicStream("Sounds/mainMusic.ogg");
-    alienHitSound = LoadSound("Sounds/7od.ogg");
-    spaceShipHitSound = LoadSound("Sounds/ahSpaceShip.ogg");
-    SetMusicVolume(music, 0.1);
+    alienHitSound = LoadSound("Sounds/alienHit.ogg");
+    spaceShipHitSound = LoadSound("Sounds/spaceShipHit.ogg");
+    createAlien();
+    SetSoundVolume(alienHitSound, 0.3);
+    // SetMusicVolume(music);
     PlayMusicStream(music);
     initGame();
 }
 GameState::~GameState()
 {
-    Alien::unloadImgAliens();
     UnloadMusicStream(music);
     UnloadSound(alienHitSound);
     UnloadSound(spaceShipHitSound);
     UnloadTexture(backgroundGameState);
+    ClearBackground(BLACK);
 }
 
-void GameState::draw(Game& game)
+void GameState::draw(Game &game)
 {
     DrawTexture(backgroundGameState, 0, 0, WHITE);
     drawTheInterFace();
@@ -50,15 +52,12 @@ void GameState::draw(Game& game)
 
     boos.drawBoosAlien();
     drawAndUpdateLives();
-
-
 }
 
-void GameState::update(Game& game)
+void GameState::update(Game &game)
 {
     UpdateMusicStream(music);
 
-    
     if (running)
     {
 
@@ -90,15 +89,16 @@ void GameState::update(Game& game)
     //========================================================
     else
     {
-        if (IsKeyDown(KEY_ENTER))
-        {
-            reGame();
-            initGame();
-        }
+        reGame();
+        initGame();
+        State *nextPhase = new GameOverState();
+        game.changeState(nextPhase);
+        
     }
 }
+
 //=====================================================
-void GameState::handleInput(Game& game)
+void GameState::handleInput(Game &game)
 {
 
     if (running)
@@ -165,10 +165,10 @@ vector<Alien> GameState::createAlien()
     vector<Alien> aliens;
     for (int row = 0; row < 5; row++)
     {
+        int type = 1;
         for (int column = 0; column < 11; column++)
         {
 
-            int type;
             if (row == 0)
                 type = 1;
             else if (row == 1 || row == 2)
@@ -368,32 +368,23 @@ void GameState::drawTheInterFace()
     DrawTextEx(font, "SCORE", {50, 15}, 34, 2, yellow);
     string scoreText = FormatWithLeadingZeros(score, 5);
     DrawTextEx(font, scoreText.c_str(), {50, 40}, 34, 2, yellow);
-
-
 }
 
 void GameState::drawLevel()
 {
-    if (running)
-        {
-            DrawTextEx(font, "Level 01", {570, 740}, 34, 2.0f, yellow);
-        }
-        else
-        {
-            DrawTextEx(font, "Game Over", {570, 740}, 34, 2, yellow);
-        }
+
+    DrawTextEx(font, "Level 01", {570, 740}, 34, 2.0f, yellow);
 }
 
 void GameState::drawAndUpdateLives()
 {
     float x = 50.0;
-        for (int i = 0; i < lives; i++)
-        {
-            DrawTextureV(SpaceShip::imgSpaceShip, {x, 735}, WHITE);
-            x += 70;
-        }
+    for (int i = 0; i < lives; i++)
+    {
+        DrawTextureV(SpaceShip::imgSpaceShip, {x, 735}, WHITE);
+        x += 70;
+    }
 }
-
 
 void GameState::initGame()
 {

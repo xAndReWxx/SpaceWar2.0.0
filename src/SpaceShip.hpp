@@ -14,7 +14,6 @@ public:
     ~SpaceShip();
     void drawSpaceShip();
     void fireLaser();
-    void updateSpaceShip();
     void moveRightSpaceShip();
     void moveLiftSpaceShip();
     void moveUpSpaceShip();

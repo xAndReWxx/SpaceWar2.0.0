@@ -25,15 +25,8 @@ void SpaceShip::fireLaser(){
         lasers.push_back(Laser({float(position.x + imgSpaceShip.width/2) - 3,position.y},-5));
         lastFireTime = GetTime();
     }
-    
-
-
 }
 
-void SpaceShip::updateSpaceShip(){
-
-
-}
 
 void SpaceShip::moveRightSpaceShip(){
     position.x += 7.5;

@@ -29,6 +29,7 @@ Alien::Alien(int typeAlien, Vector2 position)
         }
 }
 
+
 void Alien::drawAlien()
 {
     DrawTextureV(imgAliens[typeAlien - 1], position, WHITE);

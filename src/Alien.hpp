@@ -5,7 +5,7 @@
 class Alien : public Positions{
 private:
 public:
-    Alien(int typeAlien = 0, Vector2 position = {0 , 0});
+    Alien(int typeAlien, Vector2 position);
     // Texture2D imageAlien;
     static Texture2D imgAliens[3];
     int typeAlien;

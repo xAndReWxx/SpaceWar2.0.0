@@ -5,11 +5,12 @@
 #include "BoosAlien.hpp"
 #include "State.hpp"
 #include "Game.hpp"
+#include "GameOverState.hpp"
 #include <string>
 #include <iostream>
 using namespace std;
 
-class GameState : public SpaceShip,public Obstacle,public Alien,public BoosAlien,public Laser,public State
+class GameState :  SpaceShip, Obstacle, BoosAlien, Laser,public State
 {
 private:
     Color gray = {29, 29, 27, 255};
