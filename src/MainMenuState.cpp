@@ -3,8 +3,8 @@
 
 MainMenuState::MainMenuState()
 {
-    backgroundMainMenu = LoadTexture("Graphics/backgroundPlayingGame.jpg");
-    menuMusic = LoadMusicStream("Sounds/ahShiitHereWeGoAgain.ogg");
+    backgroundMainMenu = LoadTexture("../Graphics/backgroundPlayingGame.jpg");
+    menuMusic = LoadMusicStream("../Sounds/ahShiitHereWeGoAgain.ogg");
     SetMusicVolume(menuMusic, 0.4);
     PlayMusicStream(menuMusic);
 }

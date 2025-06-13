@@ -2,7 +2,7 @@
 
 SpaceShip::SpaceShip()
 {
-    imgSpaceShip = LoadTexture("Graphics/imgSpaceShip.png");
+    imgSpaceShip = LoadTexture("../Graphics/imgSpaceShip.png");
     position.x = (GetScreenWidth() - imgSpaceShip.width) / 2;
     position.y = GetScreenHeight() - imgSpaceShip.height - 100;
     lastFireTime = 0.0;

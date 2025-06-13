@@ -5,10 +5,10 @@ using namespace std;
 
 GameState::GameState()
 {
-    backgroundGameState = LoadTexture("Graphics/backgroundGameState1.jpg");
-    music = LoadMusicStream("Sounds/mainMusic.ogg");
-    alienHitSound = LoadSound("Sounds/alienHit.ogg");
-    spaceShipHitSound = LoadSound("Sounds/spaceShipHit.ogg");
+    backgroundGameState = LoadTexture("../Graphics/backgroundGameState1.jpg");
+    music = LoadMusicStream("../Sounds/mainMusic.ogg");
+    alienHitSound = LoadSound("../Sounds/alienHit.ogg");
+    spaceShipHitSound = LoadSound("../Sounds/spaceShipHit.ogg");
     createAlien();
     SetSoundVolume(alienHitSound, 0.3);
     // SetMusicVolume(music);

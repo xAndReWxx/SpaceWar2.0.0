@@ -9,8 +9,8 @@ class MainMenuState : public State {
 protected:
     Texture2D backgroundMainMenu;
     Music menuMusic;
-    Button buttonPlay = {"Graphics/buttonPlay.png", {GetScreenWidth() / 2.0f, (GetScreenHeight() / 2.0f) - 80.0f}};
-    Button buttonExit = {"Graphics/buttonExit.png", {(GetScreenWidth() / 2.0f) + 4, (GetScreenHeight() / 2.0f) + 80.0f}};
+    Button buttonPlay = {"../Graphics/buttonPlay.png", {GetScreenWidth() / 2.0f, (GetScreenHeight() / 2.0f) - 80.0f}};
+    Button buttonExit = {"../Graphics/buttonExit.png", {(GetScreenWidth() / 2.0f) + 4, (GetScreenHeight() / 2.0f) + 80.0f}};
 public:
     MainMenuState();
     ~MainMenuState();

@@ -4,10 +4,10 @@ GameOverState::GameOverState()
 {
     Color gray = {100,100,100,255};
     ClearBackground(gray);
-    imgGameOver = LoadTexture("Graphics/backgroundGameOver.jpg"); 
-    gameOverMusic = LoadMusicStream("Sounds/GameOverMusic.ogg");
-    // leftImg = LoadTexture("Graphics/leftImgGameOver.jpg");   under develop
-    // rightImg = LoadTexture("Graphics/rightGameOver.jpg");    under develop
+    imgGameOver = LoadTexture("../Graphics/backgroundGameOver.jpg"); 
+    gameOverMusic = LoadMusicStream("../Sounds/GameOverMusic.ogg");
+    // leftImg = LoadTexture("../Graphics/leftImgGameOver.jpg");   under develop
+    // rightImg = LoadTexture("../Graphics/rightGameOver.jpg");    under develop
     PlayMusicStream(gameOverMusic);
 }
 

@@ -2,7 +2,6 @@
 
 Button::Button(const char* imgPath, Vector2 imgPosition)
 {
-   
     texture = LoadTexture(imgPath);
     position = imgPosition;
 }

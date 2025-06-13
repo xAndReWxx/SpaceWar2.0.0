@@ -12,19 +12,19 @@ Alien::Alien(int typeAlien, Vector2 position)
         switch (typeAlien)
         {
         case 1:
-            imgAliens[0] = LoadTexture("Graphics/prototype_1.png");
+            imgAliens[0] = LoadTexture("../Graphics/prototype_1.png");
             break;
 
         case 2:
-            imgAliens[1] = LoadTexture("Graphics/prototype_2.png");
+            imgAliens[1] = LoadTexture("../Graphics/prototype_2.png");
             break;
 
         case 3:
-            imgAliens[2] = LoadTexture("Graphics/prototype_3.png");
+            imgAliens[2] = LoadTexture("../Graphics/prototype_3.png");
             break;
 
         default:
-            imgAliens[0] = LoadTexture("Graphics/prototype_1.png");
+            imgAliens[0] = LoadTexture("../Graphics/prototype_1.png");
             break;
         }
 }

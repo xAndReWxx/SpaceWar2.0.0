@@ -2,7 +2,7 @@
 
 BoosAlien::BoosAlien()
 {
-    imgBoosAlien = LoadTexture ("Graphics/boos_prototype.png");
+    imgBoosAlien = LoadTexture("../Graphics/boos_prototype.png");
     alive = false;
 }
 
