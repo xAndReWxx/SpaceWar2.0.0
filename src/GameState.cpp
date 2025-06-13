@@ -363,7 +363,7 @@ string GameState::FormatWithLeadingZeros(int number, int width)
 void GameState::drawTheInterFace()
 {
     Rectangle rec = {10, 10, 780, 780};
-    DrawRectangleRoundedLines(rec, 0.18f, 20, yellow);
+    DrawRectangleRoundedLines(rec, 0.18f, 20, 3.0f, yellow);
     DrawLineEx({25, 730}, {775, 730}, 3, yellow);
     DrawTextEx(font, "SCORE", {50, 15}, 34, 2, yellow);
     string scoreText = FormatWithLeadingZeros(score, 5);

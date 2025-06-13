@@ -15,7 +15,7 @@ class GameState :  SpaceShip, Obstacle, BoosAlien, Laser,public State
 private:
     Color gray = {29, 29, 27, 255};
     Color yellow = {243, 216, 63, 255};
-    Font font = LoadFontEx("Font/monogram.ttf", 65, 0, 0);
+    Font font = LoadFontEx("../Font/monogram.ttf", 65, 0, 0);
     vector<Obstacle> obstacles;
     vector<Obstacle> createObstacle();
     vector<Alien> createAlien();
