@@ -51,7 +51,7 @@ Run the game manually from source using your preferred C++ IDE (e.g., Visual Stu
 
 ### **End Game**
 
-![EndGame](screenshots/EndGame.jpg)
+![EndGame](screenshots/GameOverScreenshot.png)
 
 
 
